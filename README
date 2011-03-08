@@ -1,0 +1,5 @@
+leaf_list provides a convenient way to iterate over the leafs of any tree data structure in the same way iterating over a normal STL collection.  No modifications need to be made to the underlying tree structure, and the only requirement is that two functions exist, a branch-getter and a leaf-getter, which take a reference to a branch-object and return an STL-Like collection of branches and leafs on that node.
+
+Optional arguments to the leaf_list constructor also allow for filtering functions to be passed in.  If a leaf is filtered out, it is simply passed over in the iteration.  If a branch is filtered out, all leaves and branches below it are filtered out as well.
+
+Iteration order is the same as would be performed using a depth-first search.  This code has currently only been tested in Visual Studio 2010 Express; testing on other platforms is coming soon.  The leaf_list can be changed slightly to support VS 2008 and other platforms which don't support lambda statements - I'll probably include those in an #ifdef in a future version.
